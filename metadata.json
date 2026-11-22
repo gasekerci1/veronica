@@ -1,0 +1,6 @@
+{
+  "name": "Rolles Grounds & Landscapes",
+  "description": "Gardening, lawn maintenance, softscaping, and hardscaping in Chester Hill and Western Sydney, featuring an interactive NSW 400 m² lawn pricing and quote calculator.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
