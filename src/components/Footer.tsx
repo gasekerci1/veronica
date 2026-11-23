@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { ExternalLink, SlidersHorizontal, X } from 'lucide-react';
 import { validateAustralianABN, type SiteConfig } from '../data/pricingData';
 import { LeafLogo } from './LeafLogo';
+import { IS_OWNER_MODE } from '../data/ownerMode';
 interface FooterProps {
   siteConfig: SiteConfig;
   onOpenSettings: () => void;
@@ -69,6 +70,7 @@ export function Footer({ siteConfig, onOpenSettings }: FooterProps) {
                   Instagram
                 </a>
               )}
+              {IS_OWNER_MODE && (
               <button
                 type="button"
                 onClick={onOpenSettings}
@@ -77,6 +79,7 @@ export function Footer({ siteConfig, onOpenSettings }: FooterProps) {
                 <SlidersHorizontal className="w-3 h-3" aria-hidden="true" />
                 Business Details Setup
               </button>
+              )}
             </div>
           </div>
 
