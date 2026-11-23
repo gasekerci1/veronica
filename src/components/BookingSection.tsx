@@ -1,6 +1,7 @@
 import { useEffect, useState, type ChangeEvent, type FormEvent } from 'react';
 import { Check, Copy, ImagePlus, Phone, X } from 'lucide-react';
 import { CORE_SERVICE_SUBURBS, type SiteConfig } from '../data/pricingData';
+import { QUOTE_CC, QUOTE_SMS_NUMBER, QUOTE_TO } from '../data/ownerMode';
 
 interface BookingSectionProps {
   selectedSuburb: string;
@@ -58,6 +59,8 @@ export function BookingSection({
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
   const [copiedDigest, setCopiedDigest] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState(false);
 
   const serviceOptions = siteConfig.epaLicenceActive
     ? [...BASE_SERVICE_CHECKBOXES.slice(0, 8), 'Targeted weed spraying', 'Other']
@@ -158,12 +161,43 @@ export function BookingSection({
     return Object.keys(nextErrors).length === 0;
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    if (!validate()) {
+    if (!validate() || sending) {
       return;
     }
-    setSubmitted(true);
+    setSending(true);
+    setSendError(false);
+    try {
+      const payload: Record<string, string> = {
+        _subject: `New quote request — ${fullName.trim()} (${resolvedSuburb})`,
+        _template: 'table',
+        _captcha: 'false',
+        Name: fullName.trim(),
+        Phone: phone.trim(),
+        Email: email.trim() || '(not given)',
+        Suburb: `${resolvedSuburb}, NSW`,
+        Services: selectedServices.join(', '),
+        'How often': frequency,
+        'Lawn size': lawnSize,
+        'Preferred contact': preferredContact,
+        Photos: photos.length > 0 ? `${photos.length} photo(s) chosen — ask the customer to text them` : 'None',
+        Message: message.trim() || '(none)',
+      };
+      if (email.trim()) payload._replyto = email.trim();
+      if (QUOTE_CC) payload._cc = QUOTE_CC;
+      const res = await fetch(`https://formsubmit.co/ajax/${QUOTE_TO}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      setSubmitted(true);
+    } catch {
+      setSendError(true);
+    } finally {
+      setSending(false);
+    }
   };
 
   const quoteRequestDigest = [
@@ -262,11 +296,13 @@ export function BookingSection({
                     Thanks! Veronica will be in touch within 24 hours (usually sooner) with your
                     quote.
                   </h3>
-                  {siteConfig.email && (
-                    <p className="text-xs text-[#5B685E] mt-1">
-                      Form notifications configured for {siteConfig.email}.
-                    </p>
-                  )}
+                  <p className="text-sm text-[#445248] mt-2">
+                    Your request has been sent. Got photos of the garden? Text them to{' '}
+                    <a href={`sms:${QUOTE_SMS_NUMBER}`} className="text-[#1F5132] font-medium underline">
+                      0423 715 078
+                    </a>{' '}
+                    for a faster, more accurate quote.
+                  </p>
                 </div>
 
                 <pre className="p-4 bg-[#F6F7F4] border border-[#141D17]/10 rounded-lg text-xs font-mono text-[#141D17] whitespace-pre-wrap overflow-x-auto">
@@ -292,16 +328,12 @@ export function BookingSection({
                     )}
                   </button>
 
-                  {siteConfig.email && (
-                    <a
-                      href={`mailto:${siteConfig.email}?subject=${encodeURIComponent(
-                        `Quote Request — ${fullName.trim()} (${resolvedSuburb})`
-                      )}&body=${encodeURIComponent(quoteRequestDigest)}`}
-                      className="px-4 py-2.5 text-sm font-medium text-[#141D17] bg-[#F6F7F4] border border-[#141D17]/15 rounded-lg hover:bg-[#ECEEE9] transition-colors"
-                    >
-                      Open in Email App
-                    </a>
-                  )}
+                  <a
+                    href={`sms:${QUOTE_SMS_NUMBER}?&body=${encodeURIComponent(quoteRequestDigest)}`}
+                    className="px-4 py-2.5 text-sm font-medium text-[#141D17] bg-[#F6F7F4] border border-[#141D17]/15 rounded-lg hover:bg-[#ECEEE9] transition-colors"
+                  >
+                    Text it to Veronica too
+                  </a>
 
                   <button
                     type="button"
@@ -590,11 +622,29 @@ export function BookingSection({
                   </div>
                 </div>
 
+                {sendError && (
+                  <div role="alert" className="p-3 rounded-lg border border-red-200 bg-red-50 text-sm text-red-900">
+                    Sorry, that didn't send. Please{' '}
+                    <a
+                      href={`sms:${QUOTE_SMS_NUMBER}?&body=${encodeURIComponent(quoteRequestDigest)}`}
+                      className="font-semibold underline"
+                    >
+                      text your request to Veronica
+                    </a>{' '}
+                    or call{' '}
+                    <a href={`tel:${QUOTE_SMS_NUMBER}`} className="font-semibold underline">
+                      0423 715 078
+                    </a>
+                    .
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full sm:w-auto px-6 py-3 text-sm font-medium text-white bg-[#1F5132] rounded-lg hover:bg-[#173E26] transition-colors cursor-pointer"
+                  disabled={sending}
+                  className="w-full sm:w-auto px-6 py-3 text-sm font-medium text-white bg-[#1F5132] rounded-lg hover:bg-[#173E26] transition-colors cursor-pointer disabled:opacity-60 disabled:cursor-wait"
                 >
-                  Send my quote request
+                  {sending ? 'Sending…' : 'Send my quote request'}
                 </button>
               </form>
             )}
