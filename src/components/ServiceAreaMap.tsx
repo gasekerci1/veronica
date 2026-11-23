@@ -19,7 +19,11 @@ interface ServiceAreaMapProps {
   onSelectSuburb: (suburb: string) => void;
 }
 
-const MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY as string | undefined;
+const RAW_MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY as string | undefined;
+// Only use the interactive map with a real Maps JavaScript API key (they start with "AIza").
+// Anything else falls back to the free Google Maps embed so a bad key can't crash the page.
+const MAPS_API_KEY =
+  RAW_MAPS_API_KEY && RAW_MAPS_API_KEY.trim().startsWith('AIza') ? RAW_MAPS_API_KEY.trim() : undefined;
 
 function ChesterHillMapCanvas({
   activeLocation,
@@ -213,16 +217,16 @@ export function ServiceAreaMap({
                   />
                 </APIProvider>
               ) : (
-                <div className="h-full w-full flex flex-col items-center justify-center p-6 text-center bg-[#F6F7F4]">
-                  <MapPin className="w-7 h-7 text-[#1F5132] mb-2" aria-hidden="true" />
-                  <p className="text-sm font-medium text-[#141D17]">
-                    Chester Hill NSW 2162 &amp; 10 km Service Radius
-                  </p>
-                  <p className="text-xs text-[#5B685E] mt-1 max-w-sm">
-                    Centred at Chester Hill (-33.8815, 150.9977). Configure your Google Maps API
-                    key to load the interactive map tiles.
-                  </p>
-                </div>
+                <iframe
+                  title={`Map of ${activeLocation.name}, NSW ${activeLocation.postcode}`}
+                  src={`https://maps.google.com/maps?q=${encodeURIComponent(
+                    `${activeLocation.name} NSW ${activeLocation.postcode}`
+                  )}&z=13&output=embed`}
+                  className="w-full h-full border-0"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                />
               )}
             </div>
           </div>
