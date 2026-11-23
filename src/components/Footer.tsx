@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ExternalLink, SlidersHorizontal, X } from 'lucide-react';
 import { validateAustralianABN, type SiteConfig } from '../data/pricingData';
-
+import { LeafLogo } from './LeafLogo';
 interface FooterProps {
   siteConfig: SiteConfig;
   onOpenSettings: () => void;
