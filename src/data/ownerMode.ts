@@ -6,5 +6,5 @@ export const IS_OWNER_MODE =
 // Quote requests are emailed via FormSubmit (formsubmit.co).
 // QUOTE_CC is optional: add Veronica's email here to copy her on every enquiry.
 export const QUOTE_TO = 'garry@aishowroom.net';
-export const QUOTE_CC = '';
+export const QUOTE_CC = 'veronicarolles@gmail.com';
 export const QUOTE_SMS_NUMBER = '0423715078';
