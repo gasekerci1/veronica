@@ -16,6 +16,7 @@ import {
   type WasteDisposal,
 } from '../data/pricingData';
 import { LeafLogo } from './LeafLogo';
+import { IS_OWNER_MODE } from '../data/ownerMode';
 
 interface QuoteCalculatorProps {
   input: QuoteInput;
@@ -106,6 +107,7 @@ export function QuoteCalculator({
             </h2>
           </div>
 
+          {IS_OWNER_MODE && (
           <div
             role="group"
             aria-label="Calculator Perspective"
@@ -134,6 +136,7 @@ export function QuoteCalculator({
               Contractor Quote Builder
             </button>
           </div>
+          )}
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
