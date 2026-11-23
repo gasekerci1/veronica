@@ -20,18 +20,18 @@ export function HeroSection({ siteConfig, onOpenQuoteForm }: HeroSectionProps) {
   ];
 
   return (
-    <section id="top" className="pt-8 pb-12 sm:pt-12 sm:pb-16 border-b border-[#141D17]/10">
+    <section id="top" className="pt-8 pb-12 sm:pt-12 sm:pb-16 border-b border-[#23262A]/10">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
           {/* Left Proposition Column */}
           <div className="lg:col-span-6 flex flex-col justify-between py-2">
             <div>
-              <p className="text-sm font-medium text-[#445248] mb-4">
+              <p className="text-sm font-medium text-[#4E534B] mb-4">
                 Chester Hill, NSW 2162 · Bankstown · Sefton · Bass Hill &amp; Nearby Suburbs
               </p>
 
               <h1
-                className="font-semibold tracking-tight text-[#141D17] leading-[1.08] mb-5"
+                className="font-semibold tracking-tight text-[#23262A] leading-[1.08] mb-5"
                 style={{
                   fontSize: 'clamp(2.25rem, 4vw, 3.6rem)',
                   textWrap: 'balance',
@@ -40,7 +40,7 @@ export function HeroSection({ siteConfig, onOpenQuoteForm }: HeroSectionProps) {
                 Local garden care you can count on
               </h1>
 
-              <p className="text-base sm:text-lg text-[#445248] leading-relaxed max-w-xl mb-8">
+              <p className="text-base sm:text-lg text-[#4E534B] leading-relaxed max-w-xl mb-8">
                 Lawn mowing, garden maintenance, hedging, cleanups and pressure cleaning across
                 Chester Hill and surrounding suburbs — by the same friendly gardener, every visit.
               </p>
@@ -50,7 +50,7 @@ export function HeroSection({ siteConfig, onOpenQuoteForm }: HeroSectionProps) {
               <button
                 type="button"
                 onClick={onOpenQuoteForm}
-                className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-white bg-[#1F5132] rounded-lg hover:bg-[#173E26] transition-colors whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1F5132]"
+                className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-white bg-[#4F6F4A] rounded-lg hover:bg-[#3E5A3A] transition-colors whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4F6F4A]"
               >
                 Get a free quote
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -59,15 +59,15 @@ export function HeroSection({ siteConfig, onOpenQuoteForm }: HeroSectionProps) {
               {siteConfig.phone ? (
                 <a
                   href={`tel:${cleanPhoneHref}`}
-                  className="inline-flex items-center gap-2 px-5 py-3 text-sm font-medium text-[#141D17] bg-white border border-[#141D17]/15 rounded-lg hover:bg-[#ECEEE9] transition-colors whitespace-nowrap shrink-0"
+                  className="inline-flex items-center gap-2 px-5 py-3 text-sm font-medium text-[#23262A] bg-white border border-[#23262A]/15 rounded-lg hover:bg-[#EEEBE3] transition-colors whitespace-nowrap shrink-0"
                 >
-                  <Phone className="w-4 h-4 text-[#1F5132]" aria-hidden="true" />
+                  <Phone className="w-4 h-4 text-[#4F6F4A]" aria-hidden="true" />
                   Call {siteConfig.phone}
                 </a>
               ) : (
                 <a
                   href="#calculator"
-                  className="text-sm font-medium text-[#141D17] hover:text-[#1F5132] hover:underline underline-offset-4 transition-colors whitespace-nowrap shrink-0"
+                  className="text-sm font-medium text-[#23262A] hover:text-[#4F6F4A] hover:underline underline-offset-4 transition-colors whitespace-nowrap shrink-0"
                 >
                   Estimate 400 m² NSW Price
                 </a>
@@ -77,11 +77,11 @@ export function HeroSection({ siteConfig, onOpenQuoteForm }: HeroSectionProps) {
 
           {/* Right Dominant Visual Carrier */}
           <div className="lg:col-span-6">
-            <div className="relative h-full min-h-[280px] sm:min-h-[360px] rounded-xl overflow-hidden border border-[#141D17]/10 bg-[#ECEEE9]">
+            <div className="relative h-full min-h-[280px] sm:min-h-[360px] rounded-xl overflow-hidden border border-[#23262A]/10 bg-[#EEEBE3]">
               <ResilientImage
                 src="/assets/aistudio/hero-veronica-mowing-16x9_11c07705.jpg"
                 alt="Veronica Rolles mowing a sunlit Chester Hill front lawn beside neat brick garden beds"
-                fallbackLabel="The Avid Gardener — Chester Hill Garden & Lawn Care"
+                fallbackLabel="Lawn & Order — Chester Hill Garden & Lawn Care"
                 className="w-full h-full lg:h-full object-cover object-top"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-5 sm:p-6">
@@ -97,11 +97,11 @@ export function HeroSection({ siteConfig, onOpenQuoteForm }: HeroSectionProps) {
         </div>
 
         {/* Full-Width 4-Column Trust Strip below the hero split */}
-        <div className="mt-10 pt-8 border-t border-[#141D17]/10 grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div className="mt-10 pt-8 border-t border-[#23262A]/10 grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {trustMarkers.map((item) => (
             <div key={item.label}>
-              <p className="text-base sm:text-lg font-semibold text-[#141D17]">{item.label}</p>
-              <p className="text-xs text-[#445248] mt-1">{item.detail}</p>
+              <p className="text-base sm:text-lg font-semibold text-[#23262A]">{item.label}</p>
+              <p className="text-xs text-[#4E534B] mt-1">{item.detail}</p>
             </div>
           ))}
         </div>

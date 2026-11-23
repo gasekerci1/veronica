@@ -114,7 +114,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F6F7F4] text-[#141D17]">
+    <div className="min-h-screen flex flex-col bg-[#F7F5F0] text-[#23262A]">
       {mapsQuotaExceeded && (
         <div className="bg-amber-50 border-b border-amber-200 text-amber-900 px-4 py-2.5 text-xs md:text-sm text-center sticky top-0 z-50 shadow-sm no-print">
           <span>

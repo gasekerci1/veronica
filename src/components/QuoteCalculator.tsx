@@ -57,7 +57,7 @@ export function QuoteCalculator({
       .join('\n');
 
     return [
-      `THE AVID GARDENER — NSW QUOTE ESTIMATE`,
+      `LAWN & ORDER — NSW QUOTE ESTIMATE`,
       `Owner/Operator: Veronica Rolles | ${abnLine}`,
       `Suburb: ${input.suburb}, NSW`,
       `Service: ${SERVICE_LABELS[input.service].title}`,
@@ -94,13 +94,13 @@ export function QuoteCalculator({
       : 'https://abr.business.gov.au/Search/Run';
 
   return (
-    <section id="calculator" className="py-14 sm:py-20 border-b border-[#141D17]/10">
+    <section id="calculator" className="py-14 sm:py-20 border-b border-[#23262A]/10">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 no-print">
           <div>
-            <p className="text-sm font-medium text-[#1F5132] mb-2">Interactive NSW Estimator</p>
+            <p className="text-sm font-medium text-[#4F6F4A] mb-2">Interactive NSW Estimator</p>
             <h2
-              className="text-2xl sm:text-4xl font-semibold tracking-tight text-[#141D17]"
+              className="text-2xl sm:text-4xl font-semibold tracking-tight text-[#23262A]"
               style={{ textWrap: 'balance' }}
             >
               Custom lawn size &amp; 400 m² NSW quote calculator
@@ -111,15 +111,15 @@ export function QuoteCalculator({
           <div
             role="group"
             aria-label="Calculator Perspective"
-            className="inline-flex items-center p-1 bg-[#ECEEE9] rounded-lg border border-[#141D17]/10 self-start lg:self-auto"
+            className="inline-flex items-center p-1 bg-[#EEEBE3] rounded-lg border border-[#23262A]/10 self-start lg:self-auto"
           >
             <button
               type="button"
               onClick={() => setAudienceMode('homeowner')}
               className={`px-3.5 py-2 text-xs sm:text-sm font-medium rounded-md transition-colors whitespace-nowrap shrink-0 cursor-pointer ${
                 audienceMode === 'homeowner'
-                  ? 'bg-white text-[#141D17] shadow-xs'
-                  : 'text-[#445248] hover:text-[#141D17]'
+                  ? 'bg-white text-[#23262A] shadow-xs'
+                  : 'text-[#4E534B] hover:text-[#23262A]'
               }`}
             >
               Homeowner Check
@@ -129,8 +129,8 @@ export function QuoteCalculator({
               onClick={() => setAudienceMode('contractor')}
               className={`px-3.5 py-2 text-xs sm:text-sm font-medium rounded-md transition-colors whitespace-nowrap shrink-0 cursor-pointer ${
                 audienceMode === 'contractor'
-                  ? 'bg-white text-[#141D17] shadow-xs'
-                  : 'text-[#445248] hover:text-[#141D17]'
+                  ? 'bg-white text-[#23262A] shadow-xs'
+                  : 'text-[#4E534B] hover:text-[#23262A]'
               }`}
             >
               Contractor Quote Builder
@@ -141,15 +141,15 @@ export function QuoteCalculator({
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left Inputs Column */}
-          <div className="lg:col-span-7 bg-white rounded-xl border border-[#141D17]/10 p-6 sm:p-8 space-y-8 no-print">
+          <div className="lg:col-span-7 bg-white rounded-xl border border-[#23262A]/10 p-6 sm:p-8 space-y-8 no-print">
             {/* 1. Block Dimensions */}
             <div>
               <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
                 <div>
-                  <h3 className="text-base font-semibold text-[#141D17]">
+                  <h3 className="text-base font-semibold text-[#23262A]">
                     01. Lawn or Work Area Dimensions
                   </h3>
-                  <p className="text-xs text-[#5B685E] mt-0.5">
+                  <p className="text-xs text-[#5C6158] mt-0.5">
                     Test Small (&lt;100 m²), Medium (100–250 m²), or 10 m × 40 m (400 m²) NSW blocks
                   </p>
                 </div>
@@ -169,8 +169,8 @@ export function QuoteCalculator({
                         }
                         className={`px-2.5 py-1.5 text-xs font-mono tabular-nums rounded-md border transition-colors whitespace-nowrap shrink-0 cursor-pointer ${
                           active
-                            ? 'bg-[#1F5132] text-white border-[#1F5132]'
-                            : 'bg-[#F6F7F4] text-[#445248] border-[#141D17]/10 hover:border-[#141D17]/30'
+                            ? 'bg-[#4F6F4A] text-white border-[#4F6F4A]'
+                            : 'bg-[#F7F5F0] text-[#4E534B] border-[#23262A]/10 hover:border-[#23262A]/30'
                         }`}
                       >
                         {preset.label}
@@ -182,7 +182,7 @@ export function QuoteCalculator({
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <label className="block">
-                  <span className="block text-xs font-medium text-[#445248] mb-1.5">
+                  <span className="block text-xs font-medium text-[#4E534B] mb-1.5">
                     Width (metres)
                   </span>
                   <input
@@ -194,12 +194,12 @@ export function QuoteCalculator({
                     onChange={(e) =>
                       updateField('lengthM', Math.max(3, Math.min(80, Number(e.target.value) || 3)))
                     }
-                    className="w-full px-3 py-2 text-sm font-mono tabular-nums bg-[#F6F7F4] border border-[#141D17]/15 rounded-lg text-[#141D17] focus:outline-2 focus:outline-[#1F5132]"
+                    className="w-full px-3 py-2 text-sm font-mono tabular-nums bg-[#F7F5F0] border border-[#23262A]/15 rounded-lg text-[#23262A] focus:outline-2 focus:outline-[#4F6F4A]"
                   />
                 </label>
 
                 <label className="block">
-                  <span className="block text-xs font-medium text-[#445248] mb-1.5">
+                  <span className="block text-xs font-medium text-[#4E534B] mb-1.5">
                     Length (metres)
                   </span>
                   <input
@@ -211,14 +211,14 @@ export function QuoteCalculator({
                     onChange={(e) =>
                       updateField('widthM', Math.max(4, Math.min(100, Number(e.target.value) || 4)))
                     }
-                    className="w-full px-3 py-2 text-sm font-mono tabular-nums bg-[#F6F7F4] border border-[#141D17]/15 rounded-lg text-[#141D17] focus:outline-2 focus:outline-[#1F5132]"
+                    className="w-full px-3 py-2 text-sm font-mono tabular-nums bg-[#F7F5F0] border border-[#23262A]/15 rounded-lg text-[#23262A] focus:outline-2 focus:outline-[#4F6F4A]"
                   />
                 </label>
 
                 <div className="flex flex-col justify-end">
-                  <div className="px-3 py-2 bg-[#ECEEE9] border border-[#141D17]/10 rounded-lg">
-                    <span className="block text-[11px] text-[#5B685E]">Total Area</span>
-                    <span className="text-sm font-semibold font-mono tabular-nums text-[#141D17]">
+                  <div className="px-3 py-2 bg-[#EEEBE3] border border-[#23262A]/10 rounded-lg">
+                    <span className="block text-[11px] text-[#5C6158]">Total Area</span>
+                    <span className="text-sm font-semibold font-mono tabular-nums text-[#23262A]">
                       {result.areaSqm} m²
                     </span>
                   </div>
@@ -226,18 +226,18 @@ export function QuoteCalculator({
               </div>
             </div>
 
-            <hr className="border-[#141D17]/10" />
+            <hr className="border-[#23262A]/10" />
 
             {/* 2. Service Type & Suburb */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <label className="block">
-                <span className="block text-xs font-medium text-[#445248] mb-1.5">
+                <span className="block text-xs font-medium text-[#4E534B] mb-1.5">
                   02. Service Category
                 </span>
                 <select
                   value={input.service}
                   onChange={(e) => updateField('service', e.target.value as ServiceCategory)}
-                  className="w-full px-3 py-2.5 text-sm bg-[#F6F7F4] border border-[#141D17]/15 rounded-lg text-[#141D17] focus:outline-2 focus:outline-[#1F5132]"
+                  className="w-full px-3 py-2.5 text-sm bg-[#F7F5F0] border border-[#23262A]/15 rounded-lg text-[#23262A] focus:outline-2 focus:outline-[#4F6F4A]"
                 >
                   {(Object.keys(SERVICE_LABELS) as ServiceCategory[]).map((key) => (
                     <option key={key} value={key}>
@@ -248,7 +248,7 @@ export function QuoteCalculator({
               </label>
 
               <label className="block">
-                <span className="block text-xs font-medium text-[#445248] mb-1.5">
+                <span className="block text-xs font-medium text-[#4E534B] mb-1.5">
                   Suburb (Chester Hill &amp; 10 km + Outside Areas)
                 </span>
                 <input
@@ -257,7 +257,7 @@ export function QuoteCalculator({
                   value={input.suburb}
                   onChange={(e) => updateField('suburb', e.target.value)}
                   placeholder="Enter suburb..."
-                  className="w-full px-3 py-2.5 text-sm bg-[#F6F7F4] border border-[#141D17]/15 rounded-lg text-[#141D17] focus:outline-2 focus:outline-[#1F5132]"
+                  className="w-full px-3 py-2.5 text-sm bg-[#F7F5F0] border border-[#23262A]/15 rounded-lg text-[#23262A] focus:outline-2 focus:outline-[#4F6F4A]"
                 />
                 <datalist id="calc-suburb-list">
                   {CORE_SERVICE_SUBURBS.map((sub) => (
@@ -271,7 +271,7 @@ export function QuoteCalculator({
 
             {input.service === 'softscaping' && (
               <div>
-                <p className="text-xs font-medium text-[#445248] mb-2">Planting &amp; Mulching Scope</p>
+                <p className="text-xs font-medium text-[#4E534B] mb-2">Planting &amp; Mulching Scope</p>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
                   {[
                     { id: 'turf-lay', label: 'Turf Patches & Lawn' },
@@ -289,8 +289,8 @@ export function QuoteCalculator({
                       }
                       className={`px-3 py-2.5 text-xs font-medium rounded-lg border text-left transition-colors cursor-pointer ${
                         input.softscapeScope === opt.id
-                          ? 'bg-[#1F5132] text-white border-[#1F5132]'
-                          : 'bg-[#F6F7F4] text-[#141D17] border-[#141D17]/15 hover:border-[#141D17]/35'
+                          ? 'bg-[#4F6F4A] text-white border-[#4F6F4A]'
+                          : 'bg-[#F7F5F0] text-[#23262A] border-[#23262A]/15 hover:border-[#23262A]/35'
                       }`}
                     >
                       {opt.label}
@@ -302,7 +302,7 @@ export function QuoteCalculator({
 
             {input.service === 'hardscaping' && (
               <div>
-                <p className="text-xs font-medium text-[#445248] mb-2">Pressure Cleaning &amp; Path Scope</p>
+                <p className="text-xs font-medium text-[#4E534B] mb-2">Pressure Cleaning &amp; Path Scope</p>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
                   {[
                     { id: 'stepping-pavers', label: 'Paths, Patios & Pavers' },
@@ -320,8 +320,8 @@ export function QuoteCalculator({
                       }
                       className={`px-3 py-2.5 text-xs font-medium rounded-lg border text-left transition-colors cursor-pointer ${
                         input.hardscapeScope === opt.id
-                          ? 'bg-[#1F5132] text-white border-[#1F5132]'
-                          : 'bg-[#F6F7F4] text-[#141D17] border-[#141D17]/15 hover:border-[#141D17]/35'
+                          ? 'bg-[#4F6F4A] text-white border-[#4F6F4A]'
+                          : 'bg-[#F7F5F0] text-[#23262A] border-[#23262A]/15 hover:border-[#23262A]/35'
                       }`}
                     >
                       {opt.label}
@@ -333,10 +333,10 @@ export function QuoteCalculator({
 
             {isLawnService && (
               <>
-                <hr className="border-[#141D17]/10" />
+                <hr className="border-[#23262A]/10" />
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <p className="text-xs font-medium text-[#445248] mb-2">03. Grass Type</p>
+                    <p className="text-xs font-medium text-[#4E534B] mb-2">03. Grass Type</p>
                     <div className="space-y-2">
                       {[
                         { id: 'buffalo', label: 'Sir Walter Buffalo', note: 'Standard clipping volume' },
@@ -349,19 +349,19 @@ export function QuoteCalculator({
                           onClick={() => updateField('grassType', grass.id as GrassType)}
                           className={`w-full px-3.5 py-2.5 rounded-lg border text-left transition-colors cursor-pointer ${
                             input.grassType === grass.id
-                              ? 'bg-[#1F5132]/8 border-[#1F5132] text-[#141D17]'
-                              : 'bg-[#F6F7F4] border-[#141D17]/10 text-[#445248] hover:border-[#141D17]/30'
+                              ? 'bg-[#4F6F4A]/8 border-[#4F6F4A] text-[#23262A]'
+                              : 'bg-[#F7F5F0] border-[#23262A]/10 text-[#4E534B] hover:border-[#23262A]/30'
                           }`}
                         >
-                          <div className="text-xs font-semibold text-[#141D17]">{grass.label}</div>
-                          <div className="text-[11px] text-[#5B685E]">{grass.note}</div>
+                          <div className="text-xs font-semibold text-[#23262A]">{grass.label}</div>
+                          <div className="text-[11px] text-[#5C6158]">{grass.note}</div>
                         </button>
                       ))}
                     </div>
                   </div>
 
                   <div>
-                    <p className="text-xs font-medium text-[#445248] mb-2">
+                    <p className="text-xs font-medium text-[#4E534B] mb-2">
                       04. Current Grass Height
                     </p>
                     <div className="space-y-2">
@@ -376,12 +376,12 @@ export function QuoteCalculator({
                           onClick={() => updateField('growthCondition', cond.id as GrowthCondition)}
                           className={`w-full px-3.5 py-2.5 rounded-lg border text-left transition-colors cursor-pointer ${
                             input.growthCondition === cond.id
-                              ? 'bg-[#1F5132]/8 border-[#1F5132] text-[#141D17]'
-                              : 'bg-[#F6F7F4] border-[#141D17]/10 text-[#445248] hover:border-[#141D17]/30'
+                              ? 'bg-[#4F6F4A]/8 border-[#4F6F4A] text-[#23262A]'
+                              : 'bg-[#F7F5F0] border-[#23262A]/10 text-[#4E534B] hover:border-[#23262A]/30'
                           }`}
                         >
-                          <div className="text-xs font-semibold text-[#141D17]">{cond.label}</div>
-                          <div className="text-[11px] text-[#5B685E]">{cond.note}</div>
+                          <div className="text-xs font-semibold text-[#23262A]">{cond.label}</div>
+                          <div className="text-[11px] text-[#5C6158]">{cond.note}</div>
                         </button>
                       ))}
                     </div>
@@ -390,11 +390,11 @@ export function QuoteCalculator({
               </>
             )}
 
-            <hr className="border-[#141D17]/10" />
+            <hr className="border-[#23262A]/10" />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
-                <p className="text-xs font-medium text-[#445248] mb-2">
+                <p className="text-xs font-medium text-[#4E534B] mb-2">
                   Access &amp; Terrain Obstacles
                 </p>
                 <div className="space-y-2">
@@ -409,19 +409,19 @@ export function QuoteCalculator({
                       onClick={() => updateField('accessTerrain', acc.id as AccessTerrain)}
                       className={`w-full px-3.5 py-2.5 rounded-lg border text-left transition-colors cursor-pointer ${
                         input.accessTerrain === acc.id
-                          ? 'bg-[#1F5132]/8 border-[#1F5132] text-[#141D17]'
-                          : 'bg-[#F6F7F4] border-[#141D17]/10 text-[#445248] hover:border-[#141D17]/30'
+                          ? 'bg-[#4F6F4A]/8 border-[#4F6F4A] text-[#23262A]'
+                          : 'bg-[#F7F5F0] border-[#23262A]/10 text-[#4E534B] hover:border-[#23262A]/30'
                       }`}
                     >
-                      <div className="text-xs font-semibold text-[#141D17]">{acc.label}</div>
-                      <div className="text-[11px] text-[#5B685E]">{acc.note}</div>
+                      <div className="text-xs font-semibold text-[#23262A]">{acc.label}</div>
+                      <div className="text-[11px] text-[#5C6158]">{acc.note}</div>
                     </button>
                   ))}
                 </div>
               </div>
 
               <div>
-                <p className="text-xs font-medium text-[#445248] mb-2">Green Waste Disposal</p>
+                <p className="text-xs font-medium text-[#4E534B] mb-2">Green Waste Disposal</p>
                 <div className="space-y-2">
                   {[
                     { id: 'council-bin', label: 'Use Client Council Green Bin', note: 'We use your green bin first ($0)' },
@@ -434,12 +434,12 @@ export function QuoteCalculator({
                       onClick={() => updateField('wasteDisposal', waste.id as WasteDisposal)}
                       className={`w-full px-3.5 py-2.5 rounded-lg border text-left transition-colors cursor-pointer ${
                         input.wasteDisposal === waste.id
-                          ? 'bg-[#1F5132]/8 border-[#1F5132] text-[#141D17]'
-                          : 'bg-[#F6F7F4] border-[#141D17]/10 text-[#445248] hover:border-[#141D17]/30'
+                          ? 'bg-[#4F6F4A]/8 border-[#4F6F4A] text-[#23262A]'
+                          : 'bg-[#F7F5F0] border-[#23262A]/10 text-[#4E534B] hover:border-[#23262A]/30'
                       }`}
                     >
-                      <div className="text-xs font-semibold text-[#141D17]">{waste.label}</div>
-                      <div className="text-[11px] text-[#5B685E]">{waste.note}</div>
+                      <div className="text-xs font-semibold text-[#23262A]">{waste.label}</div>
+                      <div className="text-[11px] text-[#5C6158]">{waste.note}</div>
                     </button>
                   ))}
                 </div>
@@ -448,9 +448,9 @@ export function QuoteCalculator({
 
             {isLawnService && (
               <>
-                <hr className="border-[#141D17]/10" />
+                <hr className="border-[#23262A]/10" />
                 <div>
-                  <p className="text-xs font-medium text-[#445248] mb-2.5">
+                  <p className="text-xs font-medium text-[#4E534B] mb-2.5">
                     Optional Add-On Work (No chemical spraying listed unless EPA licensed)
                   </p>
                   <div className="flex flex-wrap gap-2.5">
@@ -476,8 +476,8 @@ export function QuoteCalculator({
                           onClick={() => updateField(addon.key, !active)}
                           className={`px-3.5 py-2 text-xs font-medium rounded-lg border transition-colors whitespace-nowrap shrink-0 cursor-pointer ${
                             active
-                              ? 'bg-[#1F5132] text-white border-[#1F5132]'
-                              : 'bg-[#F6F7F4] text-[#445248] border-[#141D17]/15 hover:border-[#141D17]/35'
+                              ? 'bg-[#4F6F4A] text-white border-[#4F6F4A]'
+                              : 'bg-[#F7F5F0] text-[#4E534B] border-[#23262A]/15 hover:border-[#23262A]/35'
                           }`}
                         >
                           {active ? 'Added: ' : '+ '}
@@ -492,70 +492,70 @@ export function QuoteCalculator({
           </div>
 
           {/* Right Quote Output Column */}
-          <div className="lg:col-span-5 bg-white rounded-xl border border-[#141D17]/15 p-6 sm:p-8 space-y-6">
+          <div className="lg:col-span-5 bg-white rounded-xl border border-[#23262A]/15 p-6 sm:p-8 space-y-6">
             <div>
-              <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1F5132] mb-1">
+              <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#4F6F4A] mb-1">
                 <LeafLogo className="w-4 h-4" />
-                <span>The Avid Gardener</span>
+                <span>Lawn &amp; Order</span>
               </div>
-              <p className="text-xs text-[#5B685E]">
+              <p className="text-xs text-[#5C6158]">
                 {audienceMode === 'homeowner'
                   ? 'NSW Homeowner Market Estimate'
                   : 'Contractor Quote Summary'}
               </p>
-              <h3 className="text-lg font-semibold text-[#141D17] mt-0.5">
+              <h3 className="text-lg font-semibold text-[#23262A] mt-0.5">
                 {SERVICE_LABELS[input.service].title}
               </h3>
-              <p className="text-xs text-[#445248] mt-1">
+              <p className="text-xs text-[#4E534B] mt-1">
                 {input.suburb}, NSW · {result.areaSqm} m² ({input.lengthM} m × {input.widthM} m)
               </p>
             </div>
 
-            <div className="py-5 border-y border-[#141D17]/10">
-              <p className="text-xs text-[#5B685E] mb-1">Estimated Price Range (AUD)</p>
-              <div className="text-3xl sm:text-4xl font-semibold text-[#141D17] font-mono tabular-nums tracking-tight">
+            <div className="py-5 border-y border-[#23262A]/10">
+              <p className="text-xs text-[#5C6158] mb-1">Estimated Price Range (AUD)</p>
+              <div className="text-3xl sm:text-4xl font-semibold text-[#23262A] font-mono tabular-nums tracking-tight">
                 ${result.minTotal} – ${result.maxTotal}
               </div>
-              <p className="text-xs text-[#445248] mt-2 leading-relaxed">{result.pricingNote}</p>
+              <p className="text-xs text-[#4E534B] mt-2 leading-relaxed">{result.pricingNote}</p>
             </div>
 
             <div className="grid grid-cols-2 gap-4 text-xs">
               <div>
-                <span className="block text-[#5B685E]">Per-m² Effective Rate</span>
-                <span className="text-sm font-semibold font-mono tabular-nums text-[#141D17]">
+                <span className="block text-[#5C6158]">Per-m² Effective Rate</span>
+                <span className="text-sm font-semibold font-mono tabular-nums text-[#23262A]">
                   ${result.perSqmLow.toFixed(2)} – ${result.perSqmHigh.toFixed(2)} / m²
                 </span>
               </div>
               <div>
-                <span className="block text-[#5B685E]">Est. On-Site Time</span>
-                <span className="text-sm font-semibold font-mono tabular-nums text-[#141D17]">
+                <span className="block text-[#5C6158]">Est. On-Site Time</span>
+                <span className="text-sm font-semibold font-mono tabular-nums text-[#23262A]">
                   {result.estMinutesMin} – {result.estMinutesMax} mins
                 </span>
               </div>
               <div>
-                <span className="block text-[#5B685E]">Hourly Guide Rate</span>
-                <span className="text-sm font-semibold font-mono tabular-nums text-[#141D17]">
+                <span className="block text-[#5C6158]">Hourly Guide Rate</span>
+                <span className="text-sm font-semibold font-mono tabular-nums text-[#23262A]">
                   ${result.hourlyMin} – ${result.hourlyMax} / hr
                 </span>
               </div>
               <div>
-                <span className="block text-[#5B685E]">Distance Travel Fee</span>
-                <span className="text-sm font-semibold font-mono tabular-nums text-[#141D17]">
+                <span className="block text-[#5C6158]">Distance Travel Fee</span>
+                <span className="text-sm font-semibold font-mono tabular-nums text-[#23262A]">
                   {result.travelFee === 0 ? '$0 (Within 10 km)' : `$${result.travelFee} (10–20 km)`}
                 </span>
               </div>
             </div>
 
             <div className="pt-2">
-              <p className="text-xs font-medium text-[#445248] mb-3">Itemised Breakdown</p>
-              <ul className="divide-y divide-[#141D17]/10 border-t border-b border-[#141D17]/10">
+              <p className="text-xs font-medium text-[#4E534B] mb-3">Itemised Breakdown</p>
+              <ul className="divide-y divide-[#23262A]/10 border-t border-b border-[#23262A]/10">
                 {result.lineItems.map((item) => (
                   <li key={item.label} className="py-3 flex items-start justify-between gap-4">
                     <div>
-                      <p className="text-xs font-medium text-[#141D17]">{item.label}</p>
-                      <p className="text-[11px] text-[#5B685E] mt-0.5">{item.detail}</p>
+                      <p className="text-xs font-medium text-[#23262A]">{item.label}</p>
+                      <p className="text-[11px] text-[#5C6158] mt-0.5">{item.detail}</p>
                     </div>
-                    <span className="text-xs font-mono tabular-nums font-medium text-[#141D17] whitespace-nowrap shrink-0">
+                    <span className="text-xs font-mono tabular-nums font-medium text-[#23262A] whitespace-nowrap shrink-0">
                       ${item.minAmount}–${item.maxAmount}
                     </span>
                   </li>
@@ -565,14 +565,14 @@ export function QuoteCalculator({
 
             <div className="pt-1 space-y-2.5">
               <div className="flex items-center justify-between gap-2">
-                <span className="text-xs font-medium text-[#141D17]">
+                <span className="text-xs font-medium text-[#23262A]">
                   Business &amp; ABN (Veronica Rolles)
                 </span>
                 <a
                   href={abrViewUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-xs font-medium text-[#1F5132] hover:underline whitespace-nowrap shrink-0"
+                  className="inline-flex items-center gap-1 text-xs font-medium text-[#4F6F4A] hover:underline whitespace-nowrap shrink-0"
                 >
                   ABR Lookup
                   <ExternalLink className="w-3 h-3" aria-hidden="true" />
@@ -586,15 +586,15 @@ export function QuoteCalculator({
                   aria-label="Australian Business Number (11 digits)"
                   value={siteConfig.abn}
                   onChange={(e) => onAbnChange(e.target.value)}
-                  className="flex-1 px-3 py-2 text-xs font-mono tabular-nums bg-[#F6F7F4] border border-[#141D17]/15 rounded-lg text-[#141D17] focus:outline-2 focus:outline-[#1F5132]"
+                  className="flex-1 px-3 py-2 text-xs font-mono tabular-nums bg-[#F7F5F0] border border-[#23262A]/15 rounded-lg text-[#23262A] focus:outline-2 focus:outline-[#4F6F4A]"
                 />
                 <span
                   className={`text-[11px] font-medium whitespace-nowrap shrink-0 ${
                     abnStatus.isValid
-                      ? 'text-[#1F5132]'
+                      ? 'text-[#4F6F4A]'
                       : abnStatus.isComplete
-                        ? 'text-[#9A3412]'
-                        : 'text-[#5B685E]'
+                        ? 'text-[#A84D27]'
+                        : 'text-[#5C6158]'
                   }`}
                 >
                   {abnStatus.isValid
@@ -610,7 +610,7 @@ export function QuoteCalculator({
               <button
                 type="button"
                 onClick={() => onSendToBooking(buildSummaryText())}
-                className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium text-white bg-[#1F5132] rounded-lg hover:bg-[#173E26] transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+                className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium text-white bg-[#4F6F4A] rounded-lg hover:bg-[#3E5A3A] transition-colors whitespace-nowrap shrink-0 cursor-pointer"
               >
                 <Send className="w-4 h-4" aria-hidden="true" />
                 Attach to Quote Form
@@ -619,11 +619,11 @@ export function QuoteCalculator({
               <button
                 type="button"
                 onClick={handleCopy}
-                className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 text-xs font-medium text-[#141D17] bg-[#F6F7F4] border border-[#141D17]/15 rounded-lg hover:bg-[#ECEEE9] transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+                className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 text-xs font-medium text-[#23262A] bg-[#F7F5F0] border border-[#23262A]/15 rounded-lg hover:bg-[#EEEBE3] transition-colors whitespace-nowrap shrink-0 cursor-pointer"
               >
                 {copied ? (
                   <>
-                    <Check className="w-3.5 h-3.5 text-[#1F5132]" aria-hidden="true" />
+                    <Check className="w-3.5 h-3.5 text-[#4F6F4A]" aria-hidden="true" />
                     Copied
                   </>
                 ) : (
@@ -637,7 +637,7 @@ export function QuoteCalculator({
               <button
                 type="button"
                 onClick={handlePrint}
-                className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 text-xs font-medium text-[#141D17] bg-[#F6F7F4] border border-[#141D17]/15 rounded-lg hover:bg-[#ECEEE9] transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+                className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 text-xs font-medium text-[#23262A] bg-[#F7F5F0] border border-[#23262A]/15 rounded-lg hover:bg-[#EEEBE3] transition-colors whitespace-nowrap shrink-0 cursor-pointer"
               >
                 <Printer className="w-3.5 h-3.5" aria-hidden="true" />
                 Print

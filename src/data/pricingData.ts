@@ -142,7 +142,7 @@ export const SERVICES_CATALOG: ServiceItem[] = [
     calculatorCategory: 'regular-fortnightly',
     requiresEpaLicence: true,
     imageSrc: '/assets/aistudio/nissan-elgrand-van-3x2_ee626443.jpg',
-    imageAlt: 'The Avid Gardener service vehicle equipped for licensed garden care',
+    imageAlt: 'Lawn & Order service vehicle equipped for licensed garden care',
   },
 ];
 

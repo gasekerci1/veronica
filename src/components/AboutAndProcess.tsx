@@ -66,16 +66,16 @@ export function AboutAndProcess({ siteConfig }: AboutAndProcessProps) {
   const cleanPhoneHref = siteConfig.phone.replace(/[^\d+]/g, '');
 
   return (
-    <section id="about" className="py-14 sm:py-20 border-b border-[#141D17]/10 bg-[#ECEEE9]/45">
+    <section id="about" className="py-14 sm:py-20 border-b border-[#23262A]/10 bg-[#EEEBE3]/45">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 space-y-16">
         {/* Meet Veronica */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
           <div className="lg:col-span-5">
-            <div className="aspect-[4/5] max-h-[520px] w-full rounded-xl overflow-hidden border border-[#141D17]/10 bg-white">
+            <div className="aspect-[4/5] max-h-[520px] w-full rounded-xl overflow-hidden border border-[#23262A]/10 bg-white">
               <ResilientImage
                 src="/assets/aistudio/about-veronica-portrait-4x5_db07a5af.jpg"
                 alt="Veronica Rolles holding garden shears in a sunlit Australian native garden"
-                fallbackLabel="Veronica Rolles — The Avid Gardener"
+                fallbackLabel="Veronica Rolles — Lawn & Order"
                 className="w-full h-full object-cover object-top"
               />
             </div>
@@ -83,16 +83,16 @@ export function AboutAndProcess({ siteConfig }: AboutAndProcessProps) {
 
           <div className="lg:col-span-7 flex flex-col justify-between gap-6">
             <div>
-              <p className="text-sm font-medium text-[#1F5132] mb-2">About The Avid Gardener</p>
+              <p className="text-sm font-medium text-[#4F6F4A] mb-2">About Lawn & Order</p>
               <h2
-                className="text-2xl sm:text-4xl font-semibold tracking-tight text-[#141D17] mb-5"
+                className="text-2xl sm:text-4xl font-semibold tracking-tight text-[#23262A] mb-5"
                 style={{ textWrap: 'balance' }}
               >
                 Meet Veronica
               </h2>
-              <div className="space-y-4 text-base text-[#445248] leading-relaxed max-w-2xl">
+              <div className="space-y-4 text-base text-[#4E534B] leading-relaxed max-w-2xl">
                 <p>
-                  Hi, I&apos;m Veronica — the gardener behind The Avid Gardener. I&apos;ve spent the
+                  Hi, I&apos;m Veronica — the gardener behind Lawn & Order. I&apos;ve spent the
                   last five years looking after gardens around Sydney, and I started this business
                   to give local homeowners something that&apos;s hard to find: a reliable gardener
                   who turns up when she says she will, does the job properly, and treats your garden
@@ -107,24 +107,24 @@ export function AboutAndProcess({ siteConfig }: AboutAndProcessProps) {
             </div>
 
             {/* Service Van Callout */}
-            <div className="bg-white rounded-xl border border-[#141D17]/10 overflow-hidden grid grid-cols-1 sm:grid-cols-12 items-stretch">
-              <div className="sm:col-span-5 aspect-[3/2] bg-[#ECEEE9]">
+            <div className="bg-white rounded-xl border border-[#23262A]/10 overflow-hidden grid grid-cols-1 sm:grid-cols-12 items-stretch">
+              <div className="sm:col-span-5 aspect-[3/2] bg-[#EEEBE3]">
                 <ResilientImage
                   src="/assets/aistudio/nissan-elgrand-van-3x2_ee626443.jpg"
-                  alt="The Avid Gardener silver Nissan Elgrand service van loaded with gardening equipment on a Chester Hill street"
-                  fallbackLabel="The Avid Gardener Service Van"
+                  alt="Lawn & Order silver Nissan Elgrand service van loaded with gardening equipment on a Chester Hill street"
+                  fallbackLabel="Lawn & Order Service Van"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="sm:col-span-7 p-4 sm:p-5 flex flex-col justify-between gap-3">
                 <div>
-                  <p className="text-xs font-mono text-[#1F5132]">
+                  <p className="text-xs font-mono text-[#4F6F4A]">
                     Fully Equipped · Chester Hill NSW 2162
                   </p>
-                  <h3 className="text-base font-semibold text-[#141D17] mt-1">
+                  <h3 className="text-base font-semibold text-[#23262A] mt-1">
                     Arriving on time with our own gear
                   </h3>
-                  <p className="text-xs text-[#445248] leading-relaxed mt-1">
+                  <p className="text-xs text-[#4E534B] leading-relaxed mt-1">
                     Commercial mowers, hedge trimmers, blowers, pressure cleaner and green waste
                     bags packed ready — we just need gate access and an outdoor tap for pressure
                     cleaning.
@@ -133,7 +133,7 @@ export function AboutAndProcess({ siteConfig }: AboutAndProcessProps) {
                 {siteConfig.phone && (
                   <a
                     href={`tel:${cleanPhoneHref}`}
-                    className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-[#1F5132] hover:underline self-start"
+                    className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-[#4F6F4A] hover:underline self-start"
                   >
                     <Phone className="w-3.5 h-3.5" aria-hidden="true" />
                     Call or SMS {siteConfig.phone}
@@ -145,34 +145,34 @@ export function AboutAndProcess({ siteConfig }: AboutAndProcessProps) {
         </div>
 
         {/* Why Choose Us */}
-        <div className="pt-12 border-t border-[#141D17]/10">
-          <h3 className="text-xl sm:text-2xl font-semibold text-[#141D17] mb-6">Why choose us</h3>
+        <div className="pt-12 border-t border-[#23262A]/10">
+          <h3 className="text-xl sm:text-2xl font-semibold text-[#23262A] mb-6">Why choose us</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {WHY_CHOOSE_US.map((item) => (
               <div
                 key={item.index}
-                className="bg-white rounded-xl border border-[#141D17]/10 p-5"
+                className="bg-white rounded-xl border border-[#23262A]/10 p-5"
               >
-                <p className="text-xs font-mono text-[#1F5132] mb-1.5">{item.index}</p>
-                <h4 className="text-base font-semibold text-[#141D17] mb-1.5">{item.title}</h4>
-                <p className="text-sm text-[#445248] leading-relaxed">{item.body}</p>
+                <p className="text-xs font-mono text-[#4F6F4A] mb-1.5">{item.index}</p>
+                <h4 className="text-base font-semibold text-[#23262A] mb-1.5">{item.title}</h4>
+                <p className="text-sm text-[#4E534B] leading-relaxed">{item.body}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* How It Works */}
-        <div className="pt-12 border-t border-[#141D17]/10">
-          <h3 className="text-xl sm:text-2xl font-semibold text-[#141D17] mb-6">How it works</h3>
+        <div className="pt-12 border-t border-[#23262A]/10">
+          <h3 className="text-xl sm:text-2xl font-semibold text-[#23262A] mb-6">How it works</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {HOW_IT_WORKS.map((step) => (
               <div
                 key={step.step}
-                className="bg-white rounded-xl border border-[#141D17]/10 p-5"
+                className="bg-white rounded-xl border border-[#23262A]/10 p-5"
               >
-                <p className="text-xs font-mono text-[#1F5132] mb-2">{step.step}</p>
-                <h4 className="text-base font-semibold text-[#141D17] mb-1.5">{step.title}</h4>
-                <p className="text-sm text-[#445248] leading-relaxed">{step.body}</p>
+                <p className="text-xs font-mono text-[#4F6F4A] mb-2">{step.step}</p>
+                <h4 className="text-base font-semibold text-[#23262A] mb-1.5">{step.title}</h4>
+                <p className="text-sm text-[#4E534B] leading-relaxed">{step.body}</p>
               </div>
             ))}
           </div>

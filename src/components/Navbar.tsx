@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { LeafLogo, Wordmark } from './LeafLogo';
 
 interface NavbarProps {
   onQuoteClick: () => void;
@@ -21,33 +22,28 @@ export function Navbar({ onQuoteClick }: NavbarProps) {
   };
 
   return (
-    <header className="sticky top-0 z-40 bg-[#F6F7F4]/95 backdrop-blur-sm border-b border-[#141D17]/10 no-print">
+    <header className="sticky top-0 z-40 bg-[#F7F5F0]/95 backdrop-blur-sm border-b border-[#23262A]/10 no-print">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-8">
         {/* Zone 1: Official Leaf Icon + Single-line Brand Wordmark */}
         <a
           href="#top"
-          className="inline-flex items-center gap-2.5 text-lg font-bold tracking-tight text-[#141D17] whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1F5132]"
+          className="inline-flex items-center gap-2.5 text-[#23262A] whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#4F6F4A]"
           style={{ fontFamily: 'var(--font-display)' }}
         >
-          <img
-            src="/assets/aistudio/the-avid-gardener-icon_37f87935.svg"
-            alt=""
-            aria-hidden="true"
-            className="w-7 h-7 rounded-md shrink-0"
-          />
-          <span>The Avid Gardener</span>
+          <LeafLogo className="w-7 h-7 shrink-0" />
+          <Wordmark className="text-[22px] leading-none" />
         </a>
 
         {/* Zone 2: 5 clean single-line text navigation links */}
         <nav
           aria-label="Primary Navigation"
-          className="hidden md:flex items-center gap-6 text-sm font-medium text-[#445248]"
+          className="hidden md:flex items-center gap-6 text-sm font-medium text-[#4E534B]"
         >
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="hover:text-[#141D17] hover:underline underline-offset-4 decoration-[#1F5132] transition-colors whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1F5132]"
+              className="hover:text-[#23262A] hover:underline underline-offset-4 decoration-[#4F6F4A] transition-colors whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#4F6F4A]"
             >
               {link.label}
             </a>
@@ -59,7 +55,7 @@ export function Navbar({ onQuoteClick }: NavbarProps) {
           <button
             type="button"
             onClick={onQuoteClick}
-            className="hidden sm:inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-[#1F5132] rounded-lg hover:bg-[#173E26] transition-colors whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1F5132]"
+            className="hidden sm:inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-[#4F6F4A] rounded-lg hover:bg-[#3E5A3A] transition-colors whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4F6F4A]"
           >
             Get a free quote
           </button>
@@ -69,7 +65,7 @@ export function Navbar({ onQuoteClick }: NavbarProps) {
             onClick={() => setMobileOpen((prev) => !prev)}
             aria-expanded={mobileOpen}
             aria-label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
-            className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-[#141D17]/15 text-[#141D17] hover:bg-[#ECEEE9] transition-colors cursor-pointer"
+            className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-[#23262A]/15 text-[#23262A] hover:bg-[#EEEBE3] transition-colors cursor-pointer"
           >
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -77,14 +73,14 @@ export function Navbar({ onQuoteClick }: NavbarProps) {
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden border-t border-[#141D17]/10 bg-[#F6F7F4] px-4 py-4">
+        <div className="md:hidden border-t border-[#23262A]/10 bg-[#F7F5F0] px-4 py-4">
           <nav aria-label="Mobile Navigation" className="flex flex-col gap-1">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={handleNavClick}
-                className="px-3 py-2.5 text-sm font-medium text-[#141D17] rounded-lg hover:bg-[#ECEEE9] transition-colors"
+                className="px-3 py-2.5 text-sm font-medium text-[#23262A] rounded-lg hover:bg-[#EEEBE3] transition-colors"
               >
                 {link.label}
               </a>
@@ -95,7 +91,7 @@ export function Navbar({ onQuoteClick }: NavbarProps) {
                 setMobileOpen(false);
                 onQuoteClick();
               }}
-              className="mt-2 w-full px-4 py-2.5 text-sm font-medium text-white bg-[#1F5132] rounded-lg hover:bg-[#173E26] transition-colors cursor-pointer"
+              className="mt-2 w-full px-4 py-2.5 text-sm font-medium text-white bg-[#4F6F4A] rounded-lg hover:bg-[#3E5A3A] transition-colors cursor-pointer"
             >
               Get a free quote
             </button>

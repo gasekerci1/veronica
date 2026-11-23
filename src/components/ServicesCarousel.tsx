@@ -179,15 +179,15 @@ export function ServicesCarousel({
     <section
       id="services"
       onKeyDown={handleKeyDown}
-      className="py-14 sm:py-20 border-b border-[#141D17]/10"
+      className="py-14 sm:py-20 border-b border-[#23262A]/10"
     >
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
         {/* Carousel Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
           <div>
-            <p className="text-sm font-medium text-[#1F5132] mb-2">Services &amp; Showcase</p>
+            <p className="text-sm font-medium text-[#4F6F4A] mb-2">Services &amp; Showcase</p>
             <h2
-              className="text-2xl sm:text-4xl font-semibold tracking-tight text-[#141D17]"
+              className="text-2xl sm:text-4xl font-semibold tracking-tight text-[#23262A]"
               style={{ textWrap: 'balance' }}
             >
               One call covers lawns, gardens, hedges, cleanups &amp; pressure cleaning
@@ -199,7 +199,7 @@ export function ServicesCarousel({
               type="button"
               onClick={() => setIsAutoPlaying((prev) => !prev)}
               aria-label={isAutoPlaying ? 'Pause carousel auto-advance' : 'Play carousel auto-advance'}
-              className="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-[#141D17]/15 bg-white text-[#141D17] hover:bg-[#ECEEE9] transition-colors cursor-pointer"
+              className="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-[#23262A]/15 bg-white text-[#23262A] hover:bg-[#EEEBE3] transition-colors cursor-pointer"
             >
               {isAutoPlaying ? (
                 <Pause className="w-4 h-4" aria-hidden="true" />
@@ -212,12 +212,12 @@ export function ServicesCarousel({
               type="button"
               onClick={goPrev}
               aria-label="Previous service photo"
-              className="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-[#141D17]/15 bg-white text-[#141D17] hover:bg-[#ECEEE9] transition-colors cursor-pointer"
+              className="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-[#23262A]/15 bg-white text-[#23262A] hover:bg-[#EEEBE3] transition-colors cursor-pointer"
             >
               <ChevronLeft className="w-4 h-4" aria-hidden="true" />
             </button>
 
-            <span className="px-2 text-xs font-mono tabular-nums text-[#445248] whitespace-nowrap">
+            <span className="px-2 text-xs font-mono tabular-nums text-[#4E534B] whitespace-nowrap">
               {activeIndex + 1} / {SLIDES.length}
             </span>
 
@@ -225,7 +225,7 @@ export function ServicesCarousel({
               type="button"
               onClick={goNext}
               aria-label="Next service photo"
-              className="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-[#141D17]/15 bg-white text-[#141D17] hover:bg-[#ECEEE9] transition-colors cursor-pointer"
+              className="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-[#23262A]/15 bg-white text-[#23262A] hover:bg-[#EEEBE3] transition-colors cursor-pointer"
             >
               <ChevronRight className="w-4 h-4" aria-hidden="true" />
             </button>
@@ -236,10 +236,10 @@ export function ServicesCarousel({
         <div
           onMouseEnter={() => setIsPausedByHover(true)}
           onMouseLeave={() => setIsPausedByHover(false)}
-          className="bg-white rounded-xl border border-[#141D17]/10 overflow-hidden"
+          className="bg-white rounded-xl border border-[#23262A]/10 overflow-hidden"
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
-            <div className="lg:col-span-6 relative aspect-square lg:aspect-[5/4] bg-[#ECEEE9]">
+            <div className="lg:col-span-6 relative aspect-square lg:aspect-[5/4] bg-[#EEEBE3]">
               <ResilientImage
                 src={currentSlide.imageSrc}
                 alt={currentSlide.imageAlt}
@@ -258,19 +258,19 @@ export function ServicesCarousel({
 
             <div className="lg:col-span-6 p-6 sm:p-8 lg:p-10 flex flex-col justify-between gap-6">
               <div>
-                <p className="text-xs text-[#5B685E] mb-2">{currentSlide.metadata}</p>
-                <h3 className="text-2xl sm:text-3xl font-semibold text-[#141D17] leading-tight mb-4">
+                <p className="text-xs text-[#5C6158] mb-2">{currentSlide.metadata}</p>
+                <h3 className="text-2xl sm:text-3xl font-semibold text-[#23262A] leading-tight mb-4">
                   {currentSlide.title}
                 </h3>
-                <p className="text-sm sm:text-base text-[#445248] leading-relaxed">
+                <p className="text-sm sm:text-base text-[#4E534B] leading-relaxed">
                   {currentSlide.description}
                 </p>
               </div>
 
-              <div className="space-y-4 pt-4 border-t border-[#141D17]/10">
+              <div className="space-y-4 pt-4 border-t border-[#23262A]/10">
                 <div>
-                  <span className="block text-xs text-[#5B685E]">Guide Rate</span>
-                  <span className="text-base font-semibold font-mono tabular-nums text-[#141D17]">
+                  <span className="block text-xs text-[#5C6158]">Guide Rate</span>
+                  <span className="text-base font-semibold font-mono tabular-nums text-[#23262A]">
                     {currentSlide.priceBenchmark}
                   </span>
                 </div>
@@ -280,7 +280,7 @@ export function ServicesCarousel({
                   onClick={() =>
                     onSelectServiceForQuote(currentSlide.serviceName, currentSlide.serviceCategory)
                   }
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-medium text-white bg-[#1F5132] rounded-lg hover:bg-[#173E26] transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-medium text-white bg-[#4F6F4A] rounded-lg hover:bg-[#3E5A3A] transition-colors whitespace-nowrap shrink-0 cursor-pointer"
                 >
                   Request {currentSlide.serviceName} Quote
                   <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
@@ -307,12 +307,12 @@ export function ServicesCarousel({
                 onClick={() => setActiveIndex(idx)}
                 className={`p-3 rounded-lg border text-left transition-colors cursor-pointer ${
                   isActive
-                    ? 'bg-[#142119] text-white border-[#142119]'
-                    : 'bg-white text-[#141D17] border-[#141D17]/10 hover:border-[#141D17]/30'
+                    ? 'bg-[#23262A] text-white border-[#23262A]'
+                    : 'bg-white text-[#23262A] border-[#23262A]/10 hover:border-[#23262A]/30'
                 }`}
               >
                 <div className="flex items-center gap-2.5">
-                  <div className="w-10 h-10 rounded overflow-hidden shrink-0 bg-[#ECEEE9]">
+                  <div className="w-10 h-10 rounded overflow-hidden shrink-0 bg-[#EEEBE3]">
                     <ResilientImage
                       src={slide.imageSrc}
                       alt=""
@@ -323,7 +323,7 @@ export function ServicesCarousel({
                   <div className="min-w-0">
                     <span
                       className={`block text-[11px] font-mono tabular-nums ${
-                        isActive ? 'text-[#A9DFBA]' : 'text-[#5B685E]'
+                        isActive ? 'text-[#C9D6BC]' : 'text-[#5C6158]'
                       }`}
                     >
                       {slide.indexLabel}
@@ -339,13 +339,13 @@ export function ServicesCarousel({
         </div>
 
         {/* Full Service Directory Grid */}
-        <div className="mt-12 pt-10 border-t border-[#141D17]/10">
+        <div className="mt-12 pt-10 border-t border-[#23262A]/10">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
             <div>
-              <h3 className="text-xl sm:text-2xl font-semibold text-[#141D17]">
+              <h3 className="text-xl sm:text-2xl font-semibold text-[#23262A]">
                 All Services &amp; Transparent Rates
               </h3>
-              <p className="text-xs sm:text-sm text-[#5B685E] mt-1">
+              <p className="text-xs sm:text-sm text-[#5C6158] mt-1">
                 Click any service to pre-select it in your quote request or estimator.
               </p>
             </div>
@@ -355,10 +355,10 @@ export function ServicesCarousel({
             {visibleServices.map((service, idx) => (
               <div
                 key={service.id}
-                className="bg-white rounded-xl border border-[#141D17]/10 overflow-hidden flex flex-col justify-between"
+                className="bg-white rounded-xl border border-[#23262A]/10 overflow-hidden flex flex-col justify-between"
               >
                 <div>
-                  <div className="aspect-square w-full bg-[#ECEEE9] border-b border-[#141D17]/10 overflow-hidden">
+                  <div className="aspect-square w-full bg-[#EEEBE3] border-b border-[#23262A]/10 overflow-hidden">
                     <ResilientImage
                       src={service.imageSrc}
                       alt={service.imageAlt}
@@ -367,18 +367,18 @@ export function ServicesCarousel({
                     />
                   </div>
                   <div className="p-5">
-                    <p className="text-xs font-mono text-[#1F5132] mb-1">
+                    <p className="text-xs font-mono text-[#4F6F4A] mb-1">
                       {String(idx + 1).padStart(2, '0')}.
                     </p>
-                    <h4 className="text-base font-semibold text-[#141D17] mb-1.5">
+                    <h4 className="text-base font-semibold text-[#23262A] mb-1.5">
                       {service.name}
                     </h4>
-                    <p className="text-xs font-mono tabular-nums font-medium text-[#1F5132] mb-2.5">
+                    <p className="text-xs font-mono tabular-nums font-medium text-[#4F6F4A] mb-2.5">
                       {service.priceLabel}
                     </p>
-                    <p className="text-xs text-[#445248] leading-relaxed">{service.description}</p>
+                    <p className="text-xs text-[#4E534B] leading-relaxed">{service.description}</p>
                     {service.note && (
-                      <p className="text-[11px] text-[#5B685E] mt-2 pt-2 border-t border-[#141D17]/10">
+                      <p className="text-[11px] text-[#5C6158] mt-2 pt-2 border-t border-[#23262A]/10">
                         {service.note}
                       </p>
                     )}
@@ -394,7 +394,7 @@ export function ServicesCarousel({
                         service.calculatorCategory
                       )
                     }
-                    className="inline-flex items-center gap-1 text-xs font-medium text-[#1F5132] hover:text-[#141D17] transition-colors self-start cursor-pointer"
+                    className="inline-flex items-center gap-1 text-xs font-medium text-[#4F6F4A] hover:text-[#23262A] transition-colors self-start cursor-pointer"
                   >
                     Quote {service.name.toLowerCase()}
                     <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
